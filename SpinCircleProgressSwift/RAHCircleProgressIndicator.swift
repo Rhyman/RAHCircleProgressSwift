@@ -109,6 +109,7 @@ public class RAHCircleProgressIndicator: UIView {
     private var gradLayer:          CAGradientLayer?
     // covers gradient, showing visible spinner
     private var frontLayer:         CALayer?
+    
     private var centerLabel:        UILabel?
     private var theLabelFont:          UIFont = UIFont.systemFont(ofSize: 14)
     
@@ -125,12 +126,12 @@ public class RAHCircleProgressIndicator: UIView {
     //  current position of the indicator in 360 deg arc for animated, indeterminate
     private var currentArrowArcRadians: CGFloat = 0.0
 
-    //      for discriminate indicator
+    //      for determinate indicator
     //  start and end values, and increment for changing them
     private var theStartValue:          CGFloat = 0.0
     private var theEndValue:            CGFloat = 100.0
     private var theIncrement:           CGFloat = 0.0
-    private var currentIncrementValue:  CGFloat = 0.0 //  startVal <= current <= endVal
+    private var currentValue:  CGFloat = 0.0 //  startVal <= current <= endVal
     
     private var showProgressNumber:     Bool = false
     private var showNumberWithPercent:  Bool = false
@@ -270,7 +271,7 @@ public class RAHCircleProgressIndicator: UIView {
     //    return current value of progress for determinate indicator
     public var doubleValue: Double {
         get {
-            let currentDelta = self.currentIncrementValue
+            let currentDelta = self.currentValue
             return Double(currentDelta)
         }
     }
@@ -285,7 +286,7 @@ public class RAHCircleProgressIndicator: UIView {
         set(_startValue) {
             self.theStartValue = CGFloat(_startValue)
             if self.theStartValue < self.theEndValue {
-                self.currentIncrementValue = CGFloat(self.theStartValue)
+                self.currentValue = CGFloat(self.theStartValue)
             }
         }
     }
@@ -300,7 +301,7 @@ public class RAHCircleProgressIndicator: UIView {
         set(_endValue) {
             self.theEndValue = CGFloat(_endValue)
             if self.theStartValue >= self.theEndValue {
-                self.currentIncrementValue = CGFloat(self.theEndValue)
+                self.currentValue = CGFloat(self.theEndValue)
             }
         }
     }
@@ -321,7 +322,7 @@ public class RAHCircleProgressIndicator: UIView {
         }
         set(_increment) {
             self.theIncrement = CGFloat(_increment)
-            self.currentIncrementValue = self.currentIncrementValue + self.theIncrement
+            self.currentValue = self.currentValue + self.theIncrement
             self.reset()
             self.showLabelText()
         }
@@ -431,21 +432,21 @@ public class RAHCircleProgressIndicator: UIView {
             let extraLabel = self.showLabel.trimmingCharacters(in: CharacterSet.whitespaces)
             if !extraLabel.isEmpty {
                 theLabel = self.showLabel
-                theAmount = self.currentIncrementValue
+                theAmount = self.currentValue
             } else {
                 if self.showNumberWithPercent {
                     theLabel = "%"
                         //  round to the nearest percent
-                    theAmount = self.currentIncrementValue / CGFloat(self.theEndValue - self.theStartValue) * 100.0
+                    theAmount = self.currentValue / CGFloat(self.theEndValue - self.theStartValue) * 100.0
                     let theInt = Int(round(theAmount))
                     self.centerLabel!.text = "\(theInt)" + theLabel
                 } else {
                     //  show an unlabeled number
                     let totalDelta = abs(self.theEndValue - self.theStartValue)
                     if self.theEndValue < self.theStartValue {
-                        theAmount = totalDelta + self.currentIncrementValue
+                        theAmount = totalDelta + self.currentValue
                     } else {
-                        theAmount = self.currentIncrementValue
+                        theAmount = self.currentValue
                     }
                     if self.isCountdownTimer {
                         let theInt = Int(round(theAmount))
@@ -492,7 +493,7 @@ public class RAHCircleProgressIndicator: UIView {
         
         self.theStartValue = startTime
         self.theEndValue = 0.0
-        self.currentIncrementValue = CGFloat(self.theEndValue)
+        self.currentValue = CGFloat(self.theEndValue)
         self.display(progressNumber: true, withPercent: false, orUseLabel: "")
 
         self.reset()
@@ -583,9 +584,9 @@ public class RAHCircleProgressIndicator: UIView {
             
         } else {
             let theTotalDelta = abs(self.theEndValue - self.theStartValue)
-            //var newIncrementValue = self.currentIncrementValue// + self.theIncrement
+            //var newIncrementValue = self.currentValue// + self.theIncrement
                 //  calc incrementVal from the 12 o'clock position
-            var newIncrementValue: CGFloat = self.currentIncrementValue - self.theStartValue
+            var newIncrementValue: CGFloat = self.currentValue - self.theStartValue
                 //  don't go past the end value
             if newIncrementValue >= self.theEndValue {
                 newIncrementValue = newIncrementValue - self.theEndValue
@@ -691,7 +692,7 @@ public class RAHCircleProgressIndicator: UIView {
         let increment = -1.0
         
         let totalDelta = abs(self.theEndValue - self.theStartValue)
-        let theAmount = totalDelta + self.currentIncrementValue
+        let theAmount = totalDelta + self.currentValue
         self.showLabelText()
         
         if theAmount > 0 {
