@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D2783922357A12E00E10ACE /* SpinCircleProgressSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpinCircleProgressSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D2783922357A12E00E10ACE /* RAHCircleProgressSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAHCircleProgressSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2783952357A12E00E10ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D2783972357A12E00E10ACE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D27839A2357A12E00E10ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		1D2783892357A12E00E10ACE = {
 			isa = PBXGroup;
 			children = (
-				1D2783942357A12E00E10ACE /* SpinCircleProgressSwift */,
+				1D2783942357A12E00E10ACE /* RAHCircleProgressSwift */,
 				1D2783932357A12E00E10ACE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		1D2783932357A12E00E10ACE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D2783922357A12E00E10ACE /* SpinCircleProgressSwift.app */,
+				1D2783922357A12E00E10ACE /* RAHCircleProgressSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D2783942357A12E00E10ACE /* SpinCircleProgressSwift */ = {
+		1D2783942357A12E00E10ACE /* RAHCircleProgressSwift */ = {
 			isa = PBXGroup;
 			children = (
 				1D2783952357A12E00E10ACE /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				1D27839E2357A13000E10ACE /* LaunchScreen.storyboard */,
 				1D2783A12357A13000E10ACE /* Info.plist */,
 			);
-			path = SpinCircleProgressSwift;
+			path = RAHCircleProgressSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D2783912357A12E00E10ACE /* SpinCircleProgressSwift */ = {
+		1D2783912357A12E00E10ACE /* RAHCircleProgressSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D2783A42357A13000E10ACE /* Build configuration list for PBXNativeTarget "SpinCircleProgressSwift" */;
+			buildConfigurationList = 1D2783A42357A13000E10ACE /* Build configuration list for PBXNativeTarget "RAHCircleProgressSwift" */;
 			buildPhases = (
 				1D27838E2357A12E00E10ACE /* Sources */,
 				1D27838F2357A12E00E10ACE /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = SpinCircleProgressSwift;
+			name = RAHCircleProgressSwift;
 			productName = SpinCircleProgressSwift;
-			productReference = 1D2783922357A12E00E10ACE /* SpinCircleProgressSwift.app */;
+			productReference = 1D2783922357A12E00E10ACE /* RAHCircleProgressSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D27838D2357A12E00E10ACE /* Build configuration list for PBXProject "SpinCircleProgressSwift" */;
+			buildConfigurationList = 1D27838D2357A12E00E10ACE /* Build configuration list for PBXProject "RAHCircleProgressSwift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D2783912357A12E00E10ACE /* SpinCircleProgressSwift */,
+				1D2783912357A12E00E10ACE /* RAHCircleProgressSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -288,12 +288,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6GLFGTJQP;
-				INFOPLIST_FILE = SpinCircleProgressSwift/Info.plist;
+				INFOPLIST_FILE = RAHCircleProgressSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.azarhi.SpinCircleProgressSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azarhi.RAHCircleProgressSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,12 +306,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6GLFGTJQP;
-				INFOPLIST_FILE = SpinCircleProgressSwift/Info.plist;
+				INFOPLIST_FILE = RAHCircleProgressSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.azarhi.SpinCircleProgressSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azarhi.RAHCircleProgressSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,7 +321,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D27838D2357A12E00E10ACE /* Build configuration list for PBXProject "SpinCircleProgressSwift" */ = {
+		1D27838D2357A12E00E10ACE /* Build configuration list for PBXProject "RAHCircleProgressSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D2783A22357A13000E10ACE /* Debug */,
@@ -330,7 +330,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D2783A42357A13000E10ACE /* Build configuration list for PBXNativeTarget "SpinCircleProgressSwift" */ = {
+		1D2783A42357A13000E10ACE /* Build configuration list for PBXNativeTarget "RAHCircleProgressSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D2783A52357A13000E10ACE /* Debug */,

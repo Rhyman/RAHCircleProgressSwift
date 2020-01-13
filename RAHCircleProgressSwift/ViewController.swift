@@ -1,7 +1,7 @@
 //
 //
 //  ViewController.swift
-//  for SpinCircleProgressSwift
+//  for RAHCircleProgressSwift
 //
 //  Created by Richard Hyman on 10/16/19.
 //  Copyright © 2019 Richard Hyman. All rights reserved.
@@ -42,9 +42,9 @@ class ViewController: UIViewController {
         //          topRight        --  strange colors
         //    This spinning indicator is defined in the storyboard
         //  as a simple UIView defined to be a RAHCircleProgressIndicator.
-        //  The width of the UIView defines both width & height. Fill color
-        //  in the storyboard is ignored.
-        //  The fill color is purple.
+        //  The width of the UIView defines both width & height of the
+        //  the indicator. Fill color in the storyboard is ignored.
+        //  The fill color is set to purple here.
         //  A 3 color indicator is used; Apple Blue at the front, then orange, and a yellow tail
         self.topRight?.startAnimation()
         self.topRight?.fillColor = UIColor.purple
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 
         
         
-        //          bottomLeft      --  determinate displays values
+        //          bottomLeft  --  determinate indicator displays values
         //    bottomLeft is a determinate indicator, displaying
         //  specific values. It has a light green fill (i.e. background).
         //  It has a red indicator arc.    80 by 80 pixels
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         self.bottomLeft!.startValue = -8.333
         self.bottomLeft!.endValue = 75
             //  this call causes the value to be displayed in the center
-        self.bottomLeft!.display(progressNumber: true, withPercent: false, orUseLabel: "")
+        self.bottomLeft!.display(progressNumber: true, withPercent: false, orUseLabel: "w")
             //    defining headColor causes entire indicator to be 1 color
         self.bottomLeft!.headColor = UIColor.red
             //  background is pale green
@@ -79,14 +79,16 @@ class ViewController: UIViewController {
         
         self.view.addSubview(self.bottomLeft!)
         
-            //    this initial setting of 'increment' causes the
-            //  defined startValue to be displayed
+            //    initial setting of 'increment' causes the defined
+            //  startValue to be displayed without changing the value,
+            //  Call to bottomLeft!.display causes display of values
         self.bottomLeft!.increment = 0
         
         //    mimic sending the indicator incremental updates
         //  The values sent to the indicator come from whatever class
         //  you have that has values needing display for the user.
-            //      nesting calls to the DispatchQueue that mimic updates
+        //
+            //    nesting calls to the DispatchQueue that mimic updates
             //  Updates come every 2 seconds, each increment is +10
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `1.0` to the desired number of seconds.
             self.bottomLeft!.increment = 10
@@ -105,12 +107,11 @@ class ViewController: UIViewController {
         }
 
         
-        
-        
+                
         //          bottomRight     --  countdown indicator
         //     An example of the countdown timer
-        //  The fill color is very light red. The indicator arc is thin & red
-        //  When the countdown reaches 0, theCallBack func below is executed
+        //  Very light red fill color. The indicator arc is thin & red
+        //  When countdown reaches 0, theCallBack func below is executed
         
             //  if no callback, use 'finalCallback: {}'
         self.bottomRight = RAHCircleProgressIndicator.init(frame: CGRect(x: 240, y: 300, width: 40, height: 30), countDownFrom: 10.0, finalCallback: self.theCallback)
@@ -121,16 +122,17 @@ class ViewController: UIViewController {
         self.bottomRight!.displayWhenStopped = true
         self.view.addSubview(self.bottomRight!)
         self.bottomRight!.startCountdownAnimation()
-    }
+        
+    }    //  viewDidLoad()
     
     
-
     //    used by the countdown indicator (bottomRight), this callback grabs
     //  current value of bottomLeft indicator, displaying it in an alert
+    //  Called when the countdown indicator reaches 0
     func theCallback() {
         let currentValue = self.bottomLeft!.doubleValue
-        
-        let alertController = UIAlertController(title: "My Alert::\(currentValue)", message: "A Message", preferredStyle: UIAlertController.Style.alert)
+        let theMessage = "The current value for the determinate indicator is \(currentValue)"
+        let alertController = UIAlertController(title: "Value Alert", message: theMessage, preferredStyle: UIAlertController.Style.alert)
         
         let OKAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction) -> Void in
                 // Do something based on the user tapping the action button

@@ -1,6 +1,6 @@
 //
 //  RAHCircleProgressIndicator.swift
-//  SpinCircleProgressSwift
+//  RAHCircleProgressSwift
 //
 //  Created by Richard Hyman on 10/17/19.
 //  Copyright © 2019 Richard Hyman. All rights reserved.
@@ -432,7 +432,8 @@ public class RAHCircleProgressIndicator: UIView {
             let extraLabel = self.showLabel.trimmingCharacters(in: CharacterSet.whitespaces)
             if !extraLabel.isEmpty {
                 theLabel = self.showLabel
-                theAmount = self.currentValue
+                theAmount = round(self.currentValue * 100.0)/100.0
+                self.centerLabel!.text = "\(theAmount)" + theLabel
             } else {
                 if self.showNumberWithPercent {
                     theLabel = "%"
