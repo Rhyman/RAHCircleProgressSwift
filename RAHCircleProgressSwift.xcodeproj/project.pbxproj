@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0DD50123CD19B000C74039 /* RAHCircleProgressIndicator.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DD50023CD19AF00C74039 /* RAHCircleProgressIndicator.md */; };
 		1D2783962357A12E00E10ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2783952357A12E00E10ACE /* AppDelegate.swift */; };
 		1D2783982357A12E00E10ACE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2783972357A12E00E10ACE /* ViewController.swift */; };
 		1D27839B2357A12E00E10ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2783992357A12E00E10ACE /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0DD50023CD19AF00C74039 /* RAHCircleProgressIndicator.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAHCircleProgressIndicator.md; sourceTree = "<group>"; };
 		1D2783922357A12E00E10ACE /* RAHCircleProgressSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAHCircleProgressSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2783952357A12E00E10ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D2783972357A12E00E10ACE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		1D2783892357A12E00E10ACE = {
 			isa = PBXGroup;
 			children = (
+				1D0DD50023CD19AF00C74039 /* RAHCircleProgressIndicator.md */,
 				1D2783942357A12E00E10ACE /* RAHCircleProgressSwift */,
 				1D2783932357A12E00E10ACE /* Products */,
 			);
@@ -128,6 +131,7 @@
 				1D2783A02357A13000E10ACE /* LaunchScreen.storyboard in Resources */,
 				1D27839D2357A13000E10ACE /* Assets.xcassets in Resources */,
 				1D27839B2357A12E00E10ACE /* Main.storyboard in Resources */,
+				1D0DD50123CD19B000C74039 /* RAHCircleProgressIndicator.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
