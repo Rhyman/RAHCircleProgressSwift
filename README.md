@@ -33,6 +33,7 @@ The value being displayed starts at the top of the indicator and goes around 360
 
 The countdown timer works like the discrete indicator, except that it always counts down from the initial value to 0. The initial value is displayed at the top, and the indicator proceeds counter-clockwise. A callback function can be called when 0 is reached. Like the other indicator types, fill color, arc line width and color can all be defined.
 
+![4 indicator variants](readmeImages/image1.jpeg "4 indicator variants")
 
 ## Use
 
